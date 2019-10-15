@@ -17,9 +17,9 @@ spec:
     spec:
       containers:
         - name: flask-app
-          image: mcltn/flask-template:v1
+          image: us.icr.io/mcltn/flask-template:v1
           ports:
-            - containerPort: 8080
+            - containerPort: 5000
           resources:
             requests:
               cpu: 500m
@@ -30,3 +30,5 @@ spec:
           env:
             - name: DEBUG_MODE
               value: "1"
+      imagePullSecrets:
+        - name: mcltn-us-icr-io
